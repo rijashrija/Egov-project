@@ -1,0 +1,26 @@
+.container {
+    align-items: center;
+    justify-content: center;
+}
+.main-container{
+    width: 700px;
+    margin-left:20px;
+   
+}
+.verymain-container{
+    display: flex;
+}
+.description{
+    margin-left:30px;
+    width: 700px;
+    /* align-items: right; */
+    
+}
+.title{
+    padding-left:700px;
+    background-color:  rgb(100, 159, 208);
+}
+.previous{
+    background-color: rgb(100,159,208);
+    padding-left: 500px;
+}
