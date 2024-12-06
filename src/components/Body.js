@@ -10,7 +10,10 @@ function Body() {
   return (
     
     <>
-    <h3 className='title'>Online Census</h3>
+    <div className="title">
+      
+    </div>
+    {/* <h3 className='title'>Online Census</h3> */}
     <div className='verymain-container'>
     <div className="main-container">
     <div className="container">
