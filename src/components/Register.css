@@ -1,0 +1,121 @@
+/* Main container for the register form */
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgb(100, 159, 208); /* Background color */
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Card styling for the login form */
+  .register-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+  }
+  
+  /* Styling for the error message */
+  .error-message {
+    color: red;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #fff5f5; /* Light red background */
+    border: 1px solid red;
+    padding: 10px;
+    border-radius: 5px;
+    width: 90%;
+  }
+  
+  /* Header for the login form */
+  .register-card h2 {
+    margin-bottom: 20px;
+    color: rgb(60, 60, 60);
+  }
+  
+  /* Input group styling */
+  .input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .input-group .icon {
+    margin-right: 10px;
+    color: #666;
+    font-size: 1.2rem;
+  }
+  
+  .input-group input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 1rem;
+    background-color: transparent;
+  }
+  
+  /* Forgot password link */
+  .forgot-password {
+    display: block;
+    margin: 10px 0;
+    color: rgb(60, 120, 200);
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  /* Login button styling */
+  .login-btn {
+    width: 100%;
+    background-color: rgb(60, 120, 200);
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .login-btn:hover {
+    background-color: rgb(50, 100, 180);
+  }
+  
+  /* Signup text styling */
+  .signup-link {
+    color: rgb(60, 120, 200);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .signup-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 400px) {
+    .register-card {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    .error-message {
+      width: 100%;
+    }
+  }
+  
