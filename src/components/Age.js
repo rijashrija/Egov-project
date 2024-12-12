@@ -1,9 +1,9 @@
 import React from 'react'
-
+import line from './age.jpg'
 function Age() {
   return (
     <div>
-      age
+      <img src={line} alt="age" />
     </div>
   )
 }

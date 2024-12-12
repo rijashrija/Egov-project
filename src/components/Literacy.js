@@ -1,9 +1,9 @@
 import React from 'react'
-
+import literacy from './literacy.jpg'
 function Literacy() {
   return (
     <div>
-      literacy
+      <img src={literacy} alt="" />
     </div>
   )
 }

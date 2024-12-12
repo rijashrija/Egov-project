@@ -14,8 +14,10 @@ margin-right: 30px;
 {
     
     margin-top: 40px;
-    margin-left: 320px;
+    margin-left: 250px;
     width: 10000px;
+    align-items: center;
+    justify-content: center;
 }
 .census{
     right: 20px;

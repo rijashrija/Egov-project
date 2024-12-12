@@ -10,7 +10,9 @@ import Tech from './components/Tech';
 import Age from './components/Age';
 import Literacy from './components/Literacy';
 import Economy from './components/Economy';
+import Register from './components/Register';
 import { createBrowserRouter, RouterProvider } from 'react-router';
+// import { PieChart } from './components/Previous';
 function App() {
   const router = createBrowserRouter([
     {path:'/', element:<><Navbar/><Body/><Previous/><Footer/></>},
@@ -20,6 +22,8 @@ function App() {
     {path:"/age",element:<><Navbar/><Age/><Footer/></>},
     {path:"/literacy",element:<><Navbar/><Literacy/><Footer/></>},
     {path:"/economy",element:<><Navbar/><Economy/><Footer/></>},
+    {path:"/register",element:<><Navbar/><Register/><Footer/></>},
+
 
 
 
@@ -28,6 +32,7 @@ function App() {
     <>
     
     <RouterProvider router={router}/>
+   
     </>
   );
 }

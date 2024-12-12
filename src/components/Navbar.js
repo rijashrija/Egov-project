@@ -12,8 +12,8 @@ export default function Navbar() {
     <img className='gov' src={imggov} alt="govlogo" />
     <div className="heading">
     <h3>Government of Nepal</h3>
-    <h3>Office of PM and council of minister</h3>
-    <h3>National statistics office</h3>
+    <h3>Office of Prime Minister and Council of Minister</h3>
+    <h3>National Statistics Office</h3>
     </div>
     
     <img className='census' src={imglogo} alt="census logo" />
@@ -34,6 +34,9 @@ export default function Navbar() {
         </li>
         <li className="nav-item">
           <NavLink className={(e)=>{return e.isActive?"nav-link active":"nav-link"}} to="/login">Login</NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className={(e)=>{return e.isActive?"nav-link active":"nav-link"}} to="/register">Register</NavLink>
         </li>
         <li className="nav-item">
           <NavLink className={(e)=>{return e.isActive?"nav-link active":"nav-link"}} to="/faq">Faq</NavLink>
