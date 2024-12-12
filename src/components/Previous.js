@@ -3,8 +3,8 @@ import imgpopulation from './bargraph.jpg'
 import './Previous.css';
 // import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router';
-import { Chart as ChartJS } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
+// import { Chart as ChartJS } from 'chart.js';
+// import { Pie } from 'react-chartjs-2';
 function Previous() {
   return (
     <>
