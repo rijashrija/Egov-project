@@ -3,8 +3,28 @@ import imgpopulation from './bargraph.jpg'
 import './Previous.css';
 // import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router';
-import { Chart as ChartJS } from 'chart.js';
+import { Chart as ChartJS,ArcElement,Tooltip,Legend, plugins } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
+import { PieChartData } from './Data';
+ChartJS.register(ArcElement, Tooltip,Legend);
+
+export const PieChart=()=>{
+     
+    const options={
+      plugins : {
+        legend : {
+          position : "right",
+          labels : {
+            boxWidth : 30,
+            padding : 20
+          }
+        }
+      }
+    };
+   
+    
+    return <Pie options={options} data={PieChartData}/>;
+}
 function Previous() {
 
   return (
