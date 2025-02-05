@@ -11,11 +11,16 @@ import Age from './components/Age';
 import Literacy from './components/Literacy';
 import Economy from './components/Economy';
 import Register from './components/Register';
+// import Mainform from './components/Mainform';
 import { createBrowserRouter, RouterProvider } from 'react-router';
+import CensusTableForm from './components/CensusTableForm';
 // import { PieChart } from './components/Previous';
+// import { LineChart } from './components/Age';
 function App() {
   const router = createBrowserRouter([
     {path:'/', element:<><Navbar/><Body/><Previous/><Footer/></>},
+    {path:'/form', element:<><Navbar/><CensusTableForm/><Footer/></>},
+
     {path:"/login",element:<><Navbar/><Login/><Footer/></>},
     {path:"/faq",element:<><Navbar/><Faq/><Footer/></>},
     {path:"/tech",element:<><Navbar/><Tech/><Footer/></>},

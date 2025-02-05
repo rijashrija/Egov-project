@@ -4,6 +4,7 @@ import './Body.css'
 import img1 from'./census1.jpg'
 import img2 from'./census2.jpg'
 import img3 from'./census3.jpg'
+import { NavLink } from 'react-router';
 
 
 function Body() {
@@ -53,10 +54,13 @@ function Body() {
     </p>
     </div>
     </div>
+    <div className="Form">
+    <NavLink to="/form"><button type="button" className="btn btn-primary">Proceed to Census</button></NavLink>
+
+    </div>
     <div className='previous'>
     <h3>About previous census information 2078 B.S</h3>
     </div>
-
     </>
   )
 }

@@ -33,10 +33,10 @@ export default function Navbar() {
           <NavLink className={(e)=>{return e.isActive?"nav-link active":"nav-link"}} to="/">Home</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className={(e)=>{return e.isActive?"nav-link active":"nav-link"}} to="/login">Login</NavLink>
+          <NavLink className={(e)=>{return e.isActive?"nav-link active":"nav-link"}} to="/login">Register</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className={(e)=>{return e.isActive?"nav-link active":"nav-link"}} to="/register">Register</NavLink>
+          <NavLink className={(e)=>{return e.isActive?"nav-link active":"nav-link"}} to="/register">Login</NavLink>
         </li>
         <li className="nav-item">
           <NavLink className={(e)=>{return e.isActive?"nav-link active":"nav-link"}} to="/faq">Faq</NavLink>
