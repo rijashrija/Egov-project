@@ -58,7 +58,7 @@ const FAQ = () => {
         "Although the National Census will be conducted under the leadership of the Government of Nepal and the Central Bureau of Statistics, it is not possible to complete it successfully without the full participation of all individuals, communities and organizations. The main aim of this slogan is to create a sense that the census is my census and to ensure that we are counted. Therefore, it is said that we can all participate by voluntarily recording our details and inviting our neighbors, friends and relatives to participate in the census and provide accurate details.",
     },
     {
-      question: "Do I hane to answer all the question on the census?",
+      question: "Do I have to answer all the question on the census?",
       answer:
         "According to the Statistics Act, 2015 and the National Census Operation and Management Order, 2076, it is stated that it is the responsibility and duty of all respondents to answer all the questions asked in the census. Therefore, one must answer each and every question asked in the census.",
     },
