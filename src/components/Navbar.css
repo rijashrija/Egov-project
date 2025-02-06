@@ -1,28 +1,28 @@
 .header{
-display: flex;
-background-color: rgb(100, 159, 208);
-}
-/* .header.census{
-margin-right: 30px;
-} */
- .gov
- {
-    width: 100%;
-    margin-left:20px;
- }
-.heading
-{
-    
-    margin-top: 40px;
-    margin-left: 250px;
-    width: 10000px;
-    align-items: center;
-    justify-content: center;
-}
-.census{
-    right: 20px;
-    width: 400px;
-}
-.nav-link{
-    
-}
+    display: flex;
+    background-color: rgb(100, 159, 208);
+    }
+    /* .header.census{
+    margin-right: 30px;
+    } */
+     .gov
+     {
+        width: 100%;
+        margin-left:20px;
+     }
+    .heading
+    {
+        
+        margin-top: 40px;
+        margin-left: 250px;
+        width: 10000px;
+        align-items: center;
+        justify-content: center;
+    }
+    .census{
+        right: 20px;
+        width: 400px;
+    }
+    .nav-link{
+        
+    }
