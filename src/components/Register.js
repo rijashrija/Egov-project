@@ -1,79 +1,90 @@
+// src/components/Login.js
 import React, { useState } from "react";
-import "./Register.css";
+import { auth } from "../config/firebase";
+import { signInWithEmailAndPassword} from "firebase/auth";
+import { useNavigate } from "react-router";
+import { onAuthStateChanged } from "firebase/auth";
+import './Register.css';
 
-function Register() {
-  const [emailOrPhone, setEmailOrPhone] = useState("");
+export const getLoggedInUserEmail = () => {
+  return new Promise((resolve) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        resolve(user.email); // Resolve with the user's email
+      } else {
+        resolve(null); // No user is logged in
+      }
+      unsubscribe(); // Stop listening after the first change
+    });
+  });
+};
+const Login = () => {
+   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const validateEmailOrPhone = (value) => {
-    const phoneRegex = /^(97|98)\d{8}$/; // 10-digit phone number starting with 97 or 98
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email validation
-    return phoneRegex.test(value) || emailRegex.test(value);
-  };
-
-  const validatePassword = (value) => {
-    const passwordRegex =
-      /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*\d)[A-Za-z\d!@#$%^&*]{8,}$/;
-    return passwordRegex.test(value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!validateEmailOrPhone(emailOrPhone)) {
-      alert("Error: Please enter a valid email or phone number.");
-      return;
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
+ 
+      
+      
+  // Sign in with email and password
+  const handleLogin = async () => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      setMessage("User logged in successfully!");
+      console.log("User:", user);
+      navigate("/form");
+    } catch (error) {
+      setError(error.message);
     }
-
-    if (!validatePassword(password)) {
-      alert(
-        "Error: Password must contain at least one uppercase letter, one special character, and one number."
-      );
-      return;
-    }
-
-    alert("Form submitted successfully!");
   };
+
+  // Sign up with email and password
+  // const handleSignUp = async () => {
+  //   try {
+  //     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+  //     const user = userCredential.user;
+  //     setMessage("User signed up successfully!");
+  //     console.log("User:", user);
+  //   } catch (error) {
+  //     setError(error.message);
+  //   }
+  // };
 
   return (
-    <div className="register-container">
-      <div className="register-card">
-        <h2>Login Form</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="input-group">
-            <span className="icon">📧</span>
-            <input
-              type="text"
-              placeholder="Email or Phone"
-              value={emailOrPhone}
-              onChange={(e) => setEmailOrPhone(e.target.value)}
-            />
-          </div>
-          <div className="input-group">
-            <span className="icon">🔒</span>
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <a href="#" className="forgot-password">
-            Forgot password?
-          </a>
-          <button type="submit" className="login-btn">
-            Login
-          </button>
-        </form>
-        <p>
-          Not Registered Yet?{" "}
-          <a href="#" className="signup-link">
-            Sign up here
-          </a>
-        </p>
+    <div className="login">
+      <br />
+      <h2>Login Form</h2>
+
+      <div>
+        <label>Email:</label>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
       </div>
+<br />
+      <div>
+        <label>Password:</label>
+        <input
+          type="password"
+          placeholder="Enter your password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </div>
+<br />
+      <button onClick={handleLogin}>Login</button>
+      {/* <button onClick={handleSignUp}>Sign Up</button> */}
+
+      {message && <p style={{ color: "green" }}>{message}</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      <br /><br />
     </div>
   );
-}
+};
 
-export default Register;
+export default Login;

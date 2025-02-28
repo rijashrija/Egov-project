@@ -1,121 +1,95 @@
-/* Main container for the register form */
-.register-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: rgb(100, 159, 208); /* Background color */
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Card styling for the login form */
-  .register-card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    width: 300px;
-  }
-  
-  /* Styling for the error message */
-  .error-message {
-    color: red;
-    font-size: 1rem;
-    margin-bottom: 20px;
-    text-align: center;
-    font-weight: bold;
-    background-color: #fff5f5; /* Light red background */
-    border: 1px solid red;
-    padding: 10px;
-    border-radius: 5px;
-    width: 90%;
-  }
-  
-  /* Header for the login form */
-  .register-card h2 {
-    margin-bottom: 20px;
-    color: rgb(60, 60, 60);
-  }
-  
-  /* Input group styling */
-  .input-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  .input-group .icon {
-    margin-right: 10px;
-    color: #666;
-    font-size: 1.2rem;
-  }
-  
-  .input-group input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 8px;
-    font-size: 1rem;
-    background-color: transparent;
-  }
-  
-  /* Forgot password link */
-  .forgot-password {
-    display: block;
-    margin: 10px 0;
-    color: rgb(60, 120, 200);
-    font-size: 0.9rem;
-    text-decoration: none;
-  }
-  
-  .forgot-password:hover {
-    text-decoration: underline;
-  }
-  
-  /* Login button styling */
-  .login-btn {
-    width: 100%;
-    background-color: rgb(60, 120, 200);
-    color: white;
-    padding: 10px;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .login-btn:hover {
-    background-color: rgb(50, 100, 180);
-  }
-  
-  /* Signup text styling */
-  .signup-link {
-    color: rgb(60, 120, 200);
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .signup-link:hover {
-    text-decoration: underline;
-  }
-  
-  /* Responsive design for smaller screens */
-  @media (max-width: 400px) {
-    .register-card {
-      width: 90%;
-      padding: 15px;
-    }
-  
-    .error-message {
-      width: 100%;
-    }
-  }
-  
+/* Login.css */
+
+/* General Styles */
+.login{
+  padding-left: 600px;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  height: 100vh;
+}
+
+/* Container for the Login Form */
+.login-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Heading */
+.login-container h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 2rem;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button */
+button {
+  /* width: 100%; */
+  padding: 0.75rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Messages */
+.message {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.message.success {
+  color: #28a745;
+}
+
+.message.error {
+  color: #dc3545;
+}

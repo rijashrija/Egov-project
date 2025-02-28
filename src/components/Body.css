@@ -5,8 +5,11 @@ margin-top:30px;
 }
 
 .container {
-    align-items: center;
-    justify-content: center;
+    margin-right: 30px;
+    padding-right: 150px;
+    padding-left: 0px;
+    /* align-items: center;
+    justify-content: center; */
 }
 .main-container{
     width: 700px;
@@ -27,9 +30,17 @@ margin-top:30px;
     /* width: 700px; */
     height: 50px;
     margin-bottom:10px ;
-    background-color:  rgb(193, 200, 200);
+    
+    /* background-color:  rgb(193, 200, 200); */
 }
 .previous{
     background-color: rgb(100,159,208);
     padding-left: 500px;
+}
+#carouselExampleAutoplaying
+{
+    padding-left:0px;
+}
+.carousel-inner{
+    padding-left: -10px;
 }

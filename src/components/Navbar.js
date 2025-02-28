@@ -1,10 +1,41 @@
-import React from 'react'
+
+import React,{useEffect,useState} from 'react'
 import imggov from './gov.png'
 import './Navbar.css'
 import imglogo from './lopho.png'
 import { NavLink } from 'react-router'
-
+// import {getLoggedInUserEmail} from './Register';
+import { auth } from "../config/firebase";
+import { signOut } from "firebase/auth"; 
+import { useNavigate } from "react-router";
+// import { AuthContext } from "./AuthContext"; 
 export default function Navbar() {
+  // const { user } = useContext(AuthContext); 
+      const navigate = useNavigate();
+      const [user, setUser] = useState(null);
+  const[email,setEmail]=useState(null);
+  const handleLogout = async () => {
+    try {
+      await signOut(auth); // Sign out the user
+      setEmail(null); // Clear the user state
+      navigate("/login"); // Redirect to login page (optional)
+      alert("Signed out successfully!");
+    } catch (error) {
+      console.error("Logout error: ", error);
+      alert("Failed to log out. Please try again.");
+    }
+  };
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user); // Set the logged-in user
+      } else {
+        setUser(null); // No user is logged in
+      }
+    });
+
+    return () => unsubscribe(); // Cleanup listener on unmount
+  }, []);
   return (
     <>
     
@@ -47,12 +78,39 @@ export default function Navbar() {
         
       </ul>
       <form className="d-flex" role="search">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline-success" type="submit">Search</button>
+      {/* {user && (
+            <div className="d-flex align-items-center">
+              <p className="mb-0 me-3">Hello, {user.email}</p>
+            </div>
+          )} */}
+        {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/> */}
+        {/* <button className="btn btn-outline-success" type="submit">Search</button> */}
       </form>
+      {/* {email && <p>Logged in as: {email}</p>} */}
+      <nav className="navbar">
+      <div className="navbar-left">
+        
+      </div>
+      <div className="navbar-right">
+        {user ? (
+          <div className="user-info">
+            <span>{user.email}</span> {/* Display user's email */}
+            <button onClick={handleLogout} className="btn-logout">
+              Logout
+            </button>
+          </div>
+        ) : (
+          <button onClick={() => navigate("/register")} className="btn-login">
+            Login
+          </button>
+        )}
+      </div>
+    </nav>
+
     </div>
   </div>
 </nav>
+
     </>
   )
 }
